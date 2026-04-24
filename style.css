@@ -1,0 +1,91 @@
+
+:root {
+  /* COLOR */
+  --grey-white: #FFFFFF;
+  --grey-light-01: #E9EEF5;
+  --grey-light-02: #D5DEEA;
+  --grey-light-03: #ADBDD3;
+  --grey-md-01: #919CAF;
+  /* BORDER COLOR BELOW*/
+  --grey-md-02: #5F6A7D; 
+  /* BORDER COLOR TOP */
+  --grey-md-03:#454C58;
+  --grey-dark-01: #383B44;
+  --grey-dark-02: #2C2B30;
+  --grey-black: #212024;
+  --blue-default: #2989E8;
+  --blue-tint-01: #DBEBFB;
+  --blue-tint-02: #B3DBF7;
+  --blue-tint-03: #6EB7FF;
+  --blue-dark:#255486;
+  --yellow-default: #FFE57E;
+  --yellow-dark: #E7B901;
+  --yellow-tint-01: #FFF3C5;
+
+  /* PADDING */
+  --padding-thin:2px;
+  --padding-xxs:4px;
+  --padding-xs:6px;
+  --padding-sm:8px;
+  --padding-md: 12px;
+  --padding-lg: 16px;
+  --padding-object: 20px;
+  --padding-section: 24px;
+  --max-width: 840px;
+  --max-width-project: 1080px;
+  --max-width-header: 1440px;
+  --padding-header: 36px;
+
+  /* RADIUS */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-round: 999px;
+
+  /* FONT-SIZE */
+  --font-size-sm: 1.12rem;
+  --font-size-md: 1.18rem;
+  --font-size-lg: 1.4rem;
+  --font-size-xl: 1.6rem;
+  --font-size-xxl: 2.0rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+h1{
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    line-height: 1.54;
+    margin:0;padding:0;
+}
+
+h6, p, li{
+    font-size: var(--font-size-md);
+    padding:0;margin:0;
+    line-height: 1.6;
+}
+
+
+*{
+    font-family: "IBM Plex Sans KR", sans-serif;
+    background:var(--grey-light-03);
+    color: var(--grey-dark-01);
+}
+
+*::selection{
+    background: var(--yellow-tint-01);
+    color: var(--grey-dark-01);
+}
+
+a{
+    text-decoration: none;
+    color: var(--grey-black);
+}
+a:hover{color: var(--blue-default);}
+a:visited{color: var(--grey-black);}
+
+section{
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--padding-section) 0;
+}
