@@ -62,30 +62,6 @@ a:visited{color: var(--grey-white);}
 }
 
 
-/* Essay */
-/* .imgone{
-    background: url("essay/essay_1.jpg") no-repeat center;
-}
-
-.imgtwo{
-    background: url("essay/essay_2.jpg") no-repeat center;
-}
-
-.imgthree{
-    background: url("essay/essay_3.jpg") no-repeat center;
-}
-
-.imgfour{
-    background: url("essay/essay_4.jpg") no-repeat center;
-}
-
-.imgone, .imgtwo, .imgthree, .imgfour{
-    -webkit-background-size: 100% 100%;
-    -moz-background-size:  100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-} */
-
 /* =========  FONT ========= */
 
 /* FONT SIZE */
@@ -103,7 +79,7 @@ h2{
     padding: 0;margin:0;
 }
 
-h4{
+h5{
     font-size: 1.4em;
     line-height: 160%;
     color: var(--grey-extralight);
@@ -122,6 +98,23 @@ h6, p, li, table, tr, td, button{
 /* FONT WEIGHT */
 h1, h2, h4, h6{font-weight:600;}
 p, li, table, tr, td, button{font-weight:400;}
+
+
+.text-wrapper-sm{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    gap: var(--layout-sm);
+    padding: var(--layout-sm) 0;
+}
+
+.text-wrapper-md{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    gap: var(--layout-md);
+    padding: var(--layout-md) 0;
+}
 
 
 /* ============ ELEMENT ============ */
@@ -177,6 +170,7 @@ nav{
     border-bottom: 1px solid var(--grey-default);
     box-sizing: border-box;
     z-index: 100;
+    height: 48px;
 }
 
 #icon {width: 24px; height: 24px; flex-shrink: 0;}
@@ -184,7 +178,8 @@ nav{
 .nav-links {
     display: flex;
     flex-direction: row;
-    align-items: right;
+    justify-content: flex-end;
+    align-items: flex-end;
     text-align: right;
     gap: var(--layout-section);
     flex: 1 0 0;
@@ -199,7 +194,7 @@ nav{
 
 .nav-space{
     width: 100%;
-    height: 60px;
+    height: 48px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -229,4 +224,5 @@ nav{
         top: 54px;
     }
 }
+
 

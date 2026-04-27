@@ -1,351 +1,89 @@
-
-
-/* ============ TIMELINE STRUCTURE ============ */
-
-@media only screen and (min-width: 768px){
-
-    /* HORIZONTAL STRUCTURE */
-    
-    #container {
-        display:inline-block;
-        position:relative;
-        overflow-y:scroll;
-        overflow-x:hidden;
-        transform: rotate(270deg) translateX(-100%);
-        transform-origin: top left;
-        border-left:#999 solid;
-        position:absolute;
-        scroll-behavior: smooth;
-        box-sizing: border-box; /*includes padding in height and makes sure there is no overlap with nav*/
-    }
-    
-    #container2{
-        width:auto;
-        transform: rotate(90deg) translateY(-100vh);
-        transform-origin: top left;
-        display:grid;
-        grid-template-columns: repeat(100,auto);
-        z-index: 4;
-    }
-    
-    #container, #container2{
-        width:100vh;
-        height:100vw;
-        top:0;bottom:0;left:0;right:0;
-    }   
-
-    .squarebox{
-        padding: 14vh 1.2em 14vh 1.2em;
-        width: auto;
-        display:inline-block;
-        background-color:black;
-    }
-
-    .img{
-        width:72vh;
-        height:72vh;
-    }
-    
-    .text{
-        width: 48vh;
-        height:80vh;
-    }
-    
-    /* ESSAY */
-    .essayheading{
-        width: 100vh;
-        border: 1px dashed #666;
-        box-sizing: border-box;
-    }
-    
-    .gap{
-        width:48vh;
-    }
-    
-    .gap, .essayheading {
-        position:relative;
-        display:inline-block;
-        height:100vh;
-        white-space:normal;
-        overflow-y:hidden;
-        padding: 4.8em 1.2em 1.2em 1.2em;
-        background-color:black;
-    }
-
-    /* SKETCH STRUCTURE*/
- 
-    .sketchbox{
-        padding: 10vh 1.2em 10vh 1.2em;
-        height:100vh;
-        width: auto;
-        box-sizing: border-box;
-        display:inline-block;
-        background-color:black;
-    }
-
-    .sketchimg{
-        width: 132vh;
-        height:100%;
-        display:inline-block;
-    }
-
-    
-    /* TIMELINE STRUCTURE */
-    
-    #timelinetitle{
-        width: 120vh;
-        z-index:-1;
-        position:fixed;
-        background-color:black;
-    }
-    
-    #titleimg{
-        height:84vh;
-        margin: 8vh 2vh 8vh 2vh;
-    }
-    
-    #empty{
-        left:0;
-        width: 100vh;
-        height: 124vh;
-        transform: rotate(90deg) translateY(-100vh);
-        transform-origin: top left;
-    }
-    
-    .explain{
-        width: 48vh; 
-        height:100vh; 
-        border-left: 1px dashed #666;
-    }
-
-    .time{
-        width: 18vh;
-        height:100vh;
-        border-left: 1px dashed #666;
-    }    
-    .space{
-        width: 12vh;
-        background-color:black;
-    }
-    
-    .explain, .time, .space{
-        box-sizing: border-box;
-        position:relative;
-        display:inline-block;
-        white-space:normal;
-        overflow-y:hidden;
-        padding: 4.8em 1.2em 1.2em 1.2em;
-        background-color:black;
-    }
-
-    /* ARROW */
-    .arrow{
-        width: 72%;
-        margin: .6em auto auto 0;
-        box-sizing:border-box;
-    }
-    #vertical{
-        display:none;
-    }
-
-    #horizontal{
-        bottom: 1.2em;
-    }
-    
+.container-title{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    aspect-ratio: 1/1;
 }
 
-@media only screen and (max-width: 767px) {
+.title-one{
+    background-image: url(src/assets/title_1_korean.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-    /* NAVIGATION */
-    #menu-toggle {
-        display: inline;
-        margin-left: auto;
-    }
+.container{
+    display:inline-block;
+    position:relative;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    transform: rotate(270deg) translateX(-100%);
+    transform-origin: top left;
+    border-left:var(--grey-default) solid 1px;
+    scroll-behavior: smooth;
+    box-sizing: border-box; 
+}
 
-    #nav-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.6);
-        z-index: 998;
-    }
+.container-scroll{
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+    display:grid;
+    max-height: calc(100vh - 48px);
+    grid-template-columns: repeat(100,auto);
+    z-index: 4;
+}
 
-    #nav-overlay.open {
-        display: block;
-    }
+.container, .container-scroll{
+    width:100vh;
+    height:100vw;
+    top:0;bottom:0;left:0;right:0;
+}   
 
-    #nav-drawer {
-        display: flex;
-        flex-direction: column;
-        gap: var(--layout-xxl);
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 64vw;
-        height: 100vh;
-        padding: 3em var(--layout-xxl);
-        background-color: var(--grey-black);
-        border-left: 1px solid var(--grey-default);
-        box-sizing: border-box;
-        z-index: 999;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    }
+.square-box{
+    padding: var(--layout-section);
+    width: auto;
+    min-width: 480px;
+    display:inline-block;
+    border-left: 1px dashed var(--grey-default);
+    background-color:var(--grey-black);
+}
 
-    #nav-drawer.open {
-        transform: translateX(0);
-    }
-
-    #nav-drawer a {
-        font-size: 1.2em;
-        font-weight: 200;
-    }
+@media only screen and (max-width: 768px) {
 
     /* HORIZONTAL STRUCTURE */
     
-    #container {
+    .container{
         display:inline-block;
         position:relative;
         overflow-y:scroll;
         overflow-x:hidden;
-        border-left:#999 solid;
-        position:absolute;
         scroll-behavior: smooth;
-        box-sizing: border-box; 
+        box-sizing: border-box;
+        transform: none;
+        transform-origin: initial;
     }
-    
-    #container2{
+
+    .container-scroll{
         width:auto;
         display:grid;
+        grid-template-columns: unset;
         grid-template-rows: repeat(100,auto);
+        transform: none;
+        transform-origin: initial;
         z-index: 4;
     }
     
-    #container, #container2{
+    .container, .container-scroll{
         width:100vw;
         height:100vh;
         top:0;bottom:0;left:0;right:0;
     }  
     
-    .squarebox{
+    .square-box{
         box-sizing:border-box;
-        padding: 0em;
-        width: 100vw;
-        display:inline-block;
-        background-color:black;
-    }
-
-    .img{
-        width:84vw;
-        height:84vw;
-        margin:6vw 6vw 6vw 6vw;
-    }
-    
-    .text{
-        width:84vw;
-        margin: auto;
-        height:auto;
-        overflow:scroll;
-        padding-top: 1.2em;
-    }
-    
-    /* ESSAY */
-    .essayheading{
-        width: 100vw;
-        border: 1px solid #666;
-        box-sizing: border-box;
-    }
-    
-    .gap{
-        width:48vh;
-    }
-    
-    .gap, .essayheading {
-        position:relative;
-        display:inline-block;
-        height:100vw;
-        white-space:normal;
-        overflow-y:hidden;
-        padding: 1.2em 1.2em 1.2em 1.2em;
-        background-color:black;
-    }
-    
-    /* SKETCH STRUCTURE*/
-    
-    .sketchbox{
-        padding: 1.2em;
-        height:auto;
-        width: 100vw;
-        box-sizing: border-box;
-        display:inline-block;
-        background-color:black;
-    }
-
-    .sketchimg{
-        width: 96vw;
-        height:100%;
         display:inline-block;
     }
     
-    /* TIMELINE STRUCTURE */
-    
-    #timelinetitle{
-        width: 100vw;
-        z-index:-1;
-        position:fixed;
-        left:0;
-        background-color:black;
-    }
-    
-    #titleimg{
-        height:72vw;
-        margin: 8vh 0 6vh 0 ;
-    }
-
-    #empty{
-        left:0;
-        width: 100vw;
-        height: 86vw;
-    }
-
-    .explain{
-        width: 100vw; 
-        height: 200vw;
-        border-top: 1px dashed #666;
-        display: inline-block;
-    }
-
-    .time{
-        height: 18vw;
-        width: 100vw;
-        padding: 0 12vw 0 12vw;
-        border-top: 1px dashed #666;
-    }    
-
-    .space{
-        width: 100vw;
-        height: 1vw;
-        background-color:black;
-    }
-    
-    .explain, .time, .space{
-        box-sizing: border-box;
-        position:relative;
-        display:inline-block;
-        white-space:normal;
-        overflow-y:hidden;
-        padding:1.2em;
-        background-color:black;
-    }
-    
-    /* ARROW */
-    .arrow{
-        width: 72%;
-        height: 72%;
-        margin:.6em auto auto auto;
-        box-sizing:border-box;
-    }
-    #horizontal{
-        display:none;
-    }
 }   
